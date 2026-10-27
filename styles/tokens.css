@@ -6,10 +6,10 @@
   --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
-  /* Fluid type scale, ~1.2 ratio, 320px → 1240px */
+  /* Fluid type scale, ~1.2 ratio, 320px → 1240px. Body text (step-0) stays 16px at every width. */
   --step--2: clamp(0.72rem, 0.7rem + 0.1vw, 0.78rem);
   --step--1: clamp(0.82rem, 0.8rem + 0.12vw, 0.9rem);
-  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --step-0: 1rem;
   --step-1: clamp(1.13rem, 1.06rem + 0.35vw, 1.35rem);
   --step-2: clamp(1.27rem, 1.15rem + 0.6vw, 1.62rem);
   --step-3: clamp(1.43rem, 1.24rem + 0.95vw, 1.95rem);

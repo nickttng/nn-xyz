@@ -215,7 +215,7 @@ main { container-type: inline-size; }
   margin-block-end: var(--space-xs);
   position: relative;
 }
-.home-section .prose { font-size: var(--step--1); line-height: 1.65; }
+.home-section .prose { font-size: var(--step-0); line-height: 1.65; }
 .home-section .prose > * + * { margin-block-start: 0.9em; }
 
 .home-pinned {
