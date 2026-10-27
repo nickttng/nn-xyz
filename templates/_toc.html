@@ -1,0 +1,8 @@
+{% if page.toc | length >= 3 %}
+<nav class="toc" aria-labelledby="toc-heading">
+  <h2 class="label" id="toc-heading">on this page</h2>
+  <ol role="list">
+    {% for entry in page.toc %}<li data-level="{{ entry.level }}"><a href="#{{ entry.id }}">{{ entry.text }}</a></li>{% endfor %}
+  </ol>
+</nav>
+{% endif %}

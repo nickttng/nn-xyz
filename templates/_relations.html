@@ -1,0 +1,14 @@
+<dl class="relations">
+  {% for group in relations %}
+  <div>
+    <dt>{{ group.label }}</dt>
+    <dd>
+      <ul role="list">
+        {% for item in group.items %}
+        <li><a href="{{ item.thing.url }}">{{ item.thing.title }}</a>{% if item.old %} <span class="relation-verb">over</span> <a href="{{ item.old.url }}">{{ item.old.title }}</a>{% endif %}</li>
+        {% endfor %}
+      </ul>
+    </dd>
+  </div>
+  {% endfor %}
+</dl>

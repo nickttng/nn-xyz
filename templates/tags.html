@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}{% if tag %}{{ tag.name }}{% else %}Tags{% endif %} · Nick Ng{% endblock %}
+{% block crumb %}{% if tag %}<a href="/tags/">tags</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">{{ tag.name }}</span>{% else %}<span aria-current="page">tags</span>{% endif %}{% endblock %}
+{% block main %}
+{% if tag %}
+<header class="note-header">
+  <h1><span class="md-mark" aria-hidden="true">#</span>{{ tag.name }}</h1>
+  <p class="summary">{{ tag.pages | length }} {% if tag.pages | length == 1 %}note{% else %}notes{% endif %} tagged <code>{{ tag.name }}</code>.</p>
+</header>
+<ol class="index" role="list">
+  {% for p in tag.pages %}
+  <li>
+    <a href="{{ p.url }}">{{ p.title }}</a>
+    {% if p.stage %}<span class="stage" data-stage="{{ p.stage }}">{{ p.stage }}</span>{% else %}<span></span>{% endif %}
+    {% if p.tended %}<time datetime="{{ p.tended }}">{{ p.tended }}</time>{% else %}<span></span>{% endif %}
+  </li>
+  {% endfor %}
+</ol>
+{% else %}
+<header class="note-header">
+  <h1><span class="md-mark" aria-hidden="true">#</span>Tags</h1>
+</header>
+<ul class="tag-list" role="list">
+  {% for t in tags %}<li><a href="{{ t.url }}">{{ t.name }}</a> <span class="count">{{ t.pages | length }}</span></li>{% endfor %}
+</ul>
+{% endif %}
+{% endblock %}

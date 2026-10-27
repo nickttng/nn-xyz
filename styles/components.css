@@ -1,0 +1,331 @@
+/* ---------- Markdown markers: the source showing through ---------- */
+
+/* comrak's heading permalink, turned into the ## marker. Hangs in the margin on wide screens. */
+.prose .anchor {
+  /* A link, so it needs readable contrast, not the decorative faint colour. */
+  color: var(--ink-muted);
+  text-decoration: none;
+  font-weight: 400;
+  margin-inline-start: 0.6ch;
+}
+.prose h2 .anchor::before { content: "##"; }
+.prose h3 .anchor::before { content: "###"; }
+.prose h4 .anchor::before { content: "####"; }
+.prose .anchor:hover { color: var(--accent); }
+
+.md-mark { color: var(--ink-faint); font-weight: 400; margin-inline-end: 0.6ch; }
+
+@media (min-width: 60rem) {
+  .prose .anchor,
+  .md-mark {
+    position: absolute;
+    inset-inline-end: 100%;
+    margin-inline: 0 1.2ch;
+  }
+  .prose .anchor { inset-block-start: 0; }
+  h1:has(.md-mark) { position: relative; }
+}
+
+/* Wikilinks: faint [[ ]] appear on hover, without moving the text. */
+.wikilink { position: relative; }
+.wikilink::before,
+.wikilink::after {
+  position: absolute;
+  inset-block-start: 0;
+  font-family: var(--font-mono);
+  font-weight: 400;
+  color: var(--ink-faint);
+  opacity: 0;
+  transition: opacity 120ms;
+  pointer-events: none;
+}
+.wikilink::before { content: "[[" / ""; inset-inline-end: 100%; }
+.wikilink::after { content: "]]" / ""; inset-inline-start: 100%; }
+.wikilink:is(:hover, :focus-visible)::before,
+.wikilink:is(:hover, :focus-visible)::after { opacity: 1; }
+
+.link-missing {
+  color: var(--ink-muted);
+  text-decoration: underline dotted var(--missing);
+  text-underline-offset: 0.22em;
+  cursor: help;
+}
+
+/* ---------- Front matter block ---------- */
+
+.frontmatter {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  line-height: 1.7;
+  color: var(--ink);
+  margin-block-end: var(--space-l);
+}
+.frontmatter::before,
+.frontmatter::after {
+  content: "---" / "";
+  display: block;
+  color: var(--ink-faint);
+}
+.frontmatter > div { display: flex; gap: 1ch; }
+.frontmatter dt { color: var(--ink-muted); min-inline-size: 8ch; }
+.frontmatter dt::after { content: ":"; }
+.frontmatter dd { color: var(--ink); }
+
+.tags { display: inline; padding: 0; list-style: none; }
+.tags::before { content: "[" / ""; color: var(--ink-faint); }
+.tags::after { content: "]" / ""; color: var(--ink-faint); }
+.tags li { display: inline; }
+.tags li + li::before { content: ", "; color: var(--ink-faint); }
+
+/* ---------- Note header ---------- */
+
+.note-header,
+.home-header { margin-block-end: var(--space-xl); }
+
+.summary {
+  margin-block-start: var(--space-s);
+  font-size: var(--step-1);
+  line-height: 1.45;
+  color: var(--ink-muted);
+  max-inline-size: 48ch;
+  text-wrap: balance;
+}
+
+/* ---------- Stage badge: ring → half → full ---------- */
+
+.stage {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6ch;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--ink-muted);
+}
+.stage::before {
+  content: "";
+  inline-size: 0.6em;
+  block-size: 0.6em;
+  border-radius: 50%;
+  border: 1.5px solid var(--stage-color);
+}
+.stage[data-stage="seedling"] { --stage-color: var(--stage-seedling); }
+.stage[data-stage="budding"] { --stage-color: var(--stage-budding); }
+.stage[data-stage="budding"]::before { background: linear-gradient(to top, var(--stage-color) 50%, transparent 50%); }
+.stage[data-stage="evergreen"] { --stage-color: var(--stage-evergreen); }
+.stage[data-stage="evergreen"]::before { background: var(--stage-color); }
+
+/* ---------- Site path header ---------- */
+
+.path {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--ink-muted);
+  overflow-wrap: anywhere;
+}
+.path a { color: var(--ink); font-weight: 600; text-decoration: none; }
+.path a:hover { color: var(--accent); }
+.path .sep { color: var(--ink-faint); margin-inline: 0.5ch; }
+
+/* ---------- Connections: backlinks and outgoing ---------- */
+
+.connections {
+  margin-block-start: var(--space-2xl);
+  padding-block-start: var(--space-l);
+  border-block-start: 1px solid var(--rule);
+  display: grid;
+  gap: var(--space-xl);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--ink-muted);
+  margin-block-end: var(--space-s);
+}
+.label .count { color: var(--ink-muted); }
+
+.backlinks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+  gap: var(--space-s);
+  padding: 0;
+  list-style: none;
+}
+.backlinks li {
+  position: relative;
+  padding: var(--space-s);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  transition: border-color 120ms;
+}
+.backlinks li:is(:hover, :focus-within) { border-color: var(--accent); }
+.backlinks a { font-weight: 600; text-decoration: none; }
+/* Whole card is clickable; the link stays the only focusable element. */
+.backlinks a::after { content: ""; position: absolute; inset: 0; }
+.backlinks p {
+  margin-block-start: var(--space-3xs);
+  font-size: var(--step--1);
+  line-height: 1.5;
+  color: var(--ink-muted);
+}
+
+.outgoing { display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-s); padding: 0; list-style: none; font-size: var(--step--1); }
+
+/* ---------- Home index ---------- */
+
+.index { padding: 0; list-style: none; border-block-start: 1px solid var(--rule); }
+.index li {
+  display: grid;
+  grid-template-columns: 1fr auto 10ch;
+  gap: var(--space-s);
+  align-items: baseline;
+  padding-block: var(--space-xs);
+  border-block-end: 1px solid var(--rule);
+}
+.index a { text-decoration: none; font-weight: 500; }
+.index time {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-muted);
+  text-align: end;
+}
+
+@container (max-width: 30rem) {
+  .index li { grid-template-columns: 1fr auto; }
+  .index time { display: none; }
+}
+main { container-type: inline-size; }
+
+/* ---------- Home: nickng.xyz's asymmetric grid, with the garden in the open half.
+   Four columns from a 60rem container (~1024px window), matching Tachyons' "large" (60em) on nickng.xyz. ---------- */
+
+.home { display: grid; gap: var(--space-xl) var(--space-l); }
+
+.statement {
+  font-size: var(--step-3);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  max-inline-size: 28ch;
+  text-wrap: balance;
+}
+
+.home h2 {
+  font-size: var(--step-1);
+  margin-block-end: var(--space-xs);
+  position: relative;
+}
+.home-section .prose { font-size: var(--step--1); line-height: 1.65; }
+.home-section .prose > * + * { margin-block-start: 0.9em; }
+
+.home-pinned {
+  margin-block-end: var(--space-l);
+  padding: var(--space-s) var(--space-m);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+}
+.home-pinned ul { padding: 0; list-style: none; display: grid; gap: var(--space-xs); }
+.home-pinned a { font-weight: 600; }
+.home-pinned p { margin-block-start: var(--space-3xs); font-size: var(--step--1); color: var(--ink-muted); }
+.home-garden .label { margin-block-end: var(--space-2xs); }
+.home-garden .index { font-size: var(--step--1); }
+.home-garden .index li { grid-template-columns: 1fr auto 10ch; padding-block: var(--space-2xs); }
+.home-garden .stage { font-size: var(--step-0); }
+
+@container (min-width: 40rem) {
+  .home { grid-template-columns: repeat(2, 1fr); }
+  .home-intro, .home-garden { grid-column: 1 / -1; }
+}
+
+@container (min-width: 60rem) {
+  /* Left half: statement, then the two columns under it. Right half: the garden, from the top.
+     The last row soaks up the garden's extra height so no gap opens under the statement. */
+  .home {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto 1fr;
+    align-items: start;
+  }
+  .home-intro { grid-column: 1 / span 2; grid-row: 1; }
+  .home-section { grid-column: span 1; grid-row: 2; }
+  .home-garden { grid-column: 3 / span 2; grid-row: 1 / -1; }
+}
+
+/* ---------- Tags ---------- */
+
+.tags a { color: inherit; text-decoration-color: var(--rule); }
+.tags a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs) var(--space-m);
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+}
+.tag-list .count { color: var(--ink-muted); }
+.tag-list .count::before { content: "(" / ""; }
+.tag-list .count::after { content: ")" / ""; }
+
+.path a + .sep + span,
+.path a ~ a { font-weight: 400; }
+
+/* ---------- Table of contents ---------- */
+
+.toc {
+  margin-block-end: var(--space-xl);
+  padding: var(--space-s) var(--space-m);
+  border-inline-start: 2px solid var(--rule);
+}
+.toc .label { margin-block-end: var(--space-2xs); }
+.toc ol { padding: 0; list-style: none; font-size: var(--step--1); line-height: 1.5; }
+.toc li + li { margin-block-start: var(--space-2xs); }
+.toc li[data-level="3"] { padding-inline-start: 2ch; }
+.toc a { text-decoration: none; color: var(--ink-muted); }
+.toc a:hover { color: var(--accent); }
+.toc a::before { content: "→ " / ""; color: var(--ink-faint); font-family: var(--font-mono); }
+
+/* ---------- Log date ---------- */
+
+.log-date {
+  font-family: var(--font-mono);
+  font-size: var(--step-0);
+  color: var(--accent);
+  margin-block-end: var(--space-2xs);
+}
+
+/* ---------- Loci: typed relations ---------- */
+
+.relations { display: grid; gap: var(--space-2xs); font-size: var(--step--1); }
+.relations > div { display: grid; grid-template-columns: 14ch 1fr; gap: var(--space-s); align-items: baseline; }
+.relations dt { font-family: var(--font-mono); color: var(--ink-muted); }
+.relations ul { display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-s); padding: 0; list-style: none; }
+.relations li { padding-block: 0.125rem; }
+.relation-verb { font-family: var(--font-mono); font-size: 0.9em; color: var(--ink-muted); }
+
+@container (max-width: 30rem) {
+  .relations > div { grid-template-columns: 1fr; gap: 0; }
+}
+
+.displacements { margin-block-start: var(--space-l); }
+.displacements ul { padding: 0; list-style: none; display: grid; gap: var(--space-2xs); }
+
+.loci-index { display: grid; gap: var(--space-xl); }
+@container (min-width: 40rem) {
+  .loci-index { grid-template-columns: repeat(2, 1fr); }
+}
+.loci-index h2 { font-size: var(--step-1); position: relative; margin-block-end: var(--space-xs); }
+.loci-list { padding: 0; list-style: none; border-block-start: 1px solid var(--rule); }
+.loci-list li {
+  display: flex; justify-content: space-between; gap: var(--space-s);
+  padding-block: var(--space-2xs); border-block-end: 1px solid var(--rule);
+}
+.loci-list a { text-decoration: none; }
+.loci-list .count { font-family: var(--font-mono); font-size: var(--step--1); color: var(--ink-muted); }
+.loci-index .empty { color: var(--ink-muted); font-size: var(--step--1); }
