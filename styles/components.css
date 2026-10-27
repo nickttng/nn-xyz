@@ -194,9 +194,13 @@
   text-align: end;
 }
 
+/* Narrow: the date drops to a second line under the title, so titles keep the full width. */
 @container (max-width: 30rem) {
-  .index li { grid-template-columns: 1fr auto; }
-  .index time { display: none; }
+  .index li { grid-template-columns: 1fr auto; row-gap: 0; }
+  .index li > :nth-child(1) { grid-column: 1; grid-row: 1; }
+  .index li > :nth-child(2) { grid-column: 2; grid-row: 1; }
+  .index li > :nth-child(3) { grid-column: 1; grid-row: 2; }
+  .index time { text-align: start; margin-block-start: var(--space-3xs); }
 }
 main { container-type: inline-size; }
 
