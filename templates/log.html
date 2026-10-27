@@ -1,0 +1,5 @@
+{% extends "note.html" %}
+{# Logs: dated entries, so the date leads. #}
+{% block above_title %}
+{% if page.planted %}<p class="log-date"><time datetime="{{ page.planted }}">{{ page.planted }}</time></p>{% endif %}
+{% endblock %}

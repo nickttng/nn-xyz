@@ -1,0 +1,24 @@
+[package]
+name = "kwaj"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.104"
+axum = "0.8.9"
+clap = { version = "4.6.7", features = ["derive", "env"] }
+comrak = { version = "0.57.0", default-features = false }
+jiff = { version = "0.2.38", features = ["serde"] }
+lightningcss = { version = "1.0.0-alpha.72", features = ["bundler"] }
+minijinja = { version = "3.0.3", features = ["serde"] }
+notify = "8.2.1"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_norway = "0.9.42"
+strsim = "0.11.1"
+tokio = { version = "1.54.1", features = ["rt-multi-thread", "macros", "sync", "time"] }
+tower-http = { version = "0.7.1", features = ["fs"] }
+walkdir = "2.5.0"
+
+[dev-dependencies]
+tempfile = "3.27.0"
+walkdir = "2.5.0"

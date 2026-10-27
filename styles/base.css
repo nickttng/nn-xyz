@@ -1,0 +1,43 @@
+body {
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+  /* Inter alternates: l with a tail, I with serifs. Il1 stay distinct. */
+  font-feature-settings: "cv05", "cv08";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+h1 { font-size: var(--step-4); font-weight: 600; letter-spacing: -0.04em; }
+
+p, li { text-wrap: pretty; }
+
+a {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  transition: color 120ms, text-decoration-thickness 120ms;
+}
+a:hover { color: var(--accent); text-decoration-thickness: 2px; }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+::selection { background: var(--selection); }
+
+code, kbd, pre { font-family: var(--font-mono); font-size: 0.88em; }
+:not(pre) > code { background: var(--surface); padding: 0.1em 0.35em; border-radius: var(--radius); }
+pre { background: var(--surface); padding: var(--space-s); border-radius: var(--radius); overflow-x: auto; line-height: 1.5; }
+
+strong { font-weight: 620; }
+hr { border: 0; border-block-start: 1px solid var(--rule); }
+input[type="checkbox"] { accent-color: var(--accent); }

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}{% if locus %}{{ locus.name }}{% else %}Loci{% endif %} · Nick Ng{% endblock %}
+{% block crumb %}{% if locus %}<a href="/loci/">loci</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">{{ locus.name }}</span>{% else %}<span aria-current="page">loci</span>{% endif %}{% endblock %}
+{% block main %}
+{% if locus %}
+<article class="note">
+  <header class="note-header">
+    <dl class="frontmatter">
+      <div><dt>locus</dt><dd><a href="/loci/#{{ locus.plural }}">{{ locus.kind }}</a></dd></div>
+    </dl>
+    <h1><span class="md-mark" aria-hidden="true">#</span>{{ locus.name }}</h1>
+    <p class="summary">Gathered from the notes that name it. There's no note of its own, yet.</p>
+  </header>
+  {% if relations %}{% include "_relations.html" %}{% endif %}
+  {% if displacements %}
+  <section class="displacements">
+    <h2 class="label"><span aria-hidden="true">⇄</span> displacement</h2>
+    <ul role="list">
+      {% for d in displacements %}
+      <li>{{ d.verb }} <a href="{{ d.other.url }}">{{ d.other.title }}</a> <span class="relation-verb">in</span> <a href="{{ d.note.url }}">{{ d.note.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</article>
+{% else %}
+<header class="note-header">
+  <h1><span class="md-mark" aria-hidden="true">#</span>Loci</h1>
+  <p class="summary">A commonplace book's headings: the works, places, objects, and questions these notes keep returning to.</p>
+</header>
+<div class="loci-index">
+  {% for section in sections %}
+  <section id="{{ section.plural }}" aria-labelledby="{{ section.plural }}-heading">
+    <h2 id="{{ section.plural }}-heading"><span class="md-mark" aria-hidden="true">##</span>{{ section.plural }}</h2>
+    {% if section.entries %}
+    <ul class="loci-list" role="list">
+      {% for e in section.entries %}<li><a href="{{ e.url }}">{{ e.title }}</a>{% if e.count %} <span class="count">{{ e.count }}</span>{% endif %}</li>{% endfor %}
+    </ul>
+    {% else %}
+    <p class="empty">None yet.</p>
+    {% endif %}
+  </section>
+  {% endfor %}
+</div>
+{% endif %}
+{% endblock %}

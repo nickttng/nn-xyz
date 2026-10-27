@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="color-scheme" content="light dark">
+  <title>{% block title %}nickng.xyz{% endblock %}</title>
+  {% block meta %}{% endblock %}
+  <link rel="preload" href="/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/plex-mono-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css">
+  {% if dev %}<script src="/__kwaj/reload.js" defer></script>
+  <script src="/__kwaj/theme.js" defer></script>
+  <link rel="stylesheet" href="/__kwaj/dev.css">{% endif %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="path" aria-label="Breadcrumb">
+      <a href="/">nickng.xyz</a><span class="sep" aria-hidden="true">/</span>{% block crumb %}{% endblock %}
+    </nav>
+  </header>
+  <main id="main">{% block main %}{% endblock %}</main>
+  <footer class="site-footer">
+    {# Loci link hidden until there's more content: <a href="/loci/">Loci</a> #}
+    <p><a href="/colophon/">Colophon</a></p>
+  </footer>
+</body>
+</html>

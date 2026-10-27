@@ -1,0 +1,10 @@
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html { -webkit-text-size-adjust: none; text-size-adjust: none; }
+body { min-height: 100dvh; }
+img, svg, video { display: block; max-inline-size: 100%; block-size: auto; }
+input, button, textarea, select { font: inherit; }
+:target { scroll-margin-block: 2rem; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}

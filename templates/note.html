@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }} · Nick Ng{% endblock %}
+{% block meta %}{% if page.summary %}<meta name="description" content="{{ page.summary }}">{% endif %}{% endblock %}
+{% block crumb %}<span aria-current="page">{{ page.slug }}</span>{% endblock %}
+{% block main %}
+<article class="note" data-layout="{{ page.layout }}">
+  <header class="note-header">
+    <dl class="frontmatter">
+      {% if page.stage %}<div><dt>stage</dt><dd><span class="stage" data-stage="{{ page.stage }}">{{ page.stage }}</span></dd></div>{% endif %}
+      {# Loci hidden until there's more content. To show again, remove this comment wrapper.
+      {% if page.locus %}<div><dt>locus</dt><dd><a href="{{ page.locus_url }}">{{ page.locus }}</a></dd></div>{% endif %}
+      #}
+      {% if page.era %}<div><dt>era</dt><dd>{{ page.era }}</dd></div>{% endif %}
+      {% if page.region %}<div><dt>region</dt><dd>{{ page.region }}</dd></div>{% endif %}
+      {% if page.planted %}<div><dt>planted</dt><dd><time datetime="{{ page.planted }}">{{ page.planted }}</time></dd></div>{% endif %}
+      {% if page.tended %}<div><dt>tended</dt><dd><time datetime="{{ page.tended }}">{{ page.tended }}</time></dd></div>{% endif %}
+      <div><dt>reading</dt><dd>{{ page.reading_minutes }} min</dd></div>
+      {% block frontmatter_extra %}{% endblock %}
+      {% if page.tags %}<div><dt>tags</dt><dd><ul class="tags" role="list">{% for tag in page.tags %}<li><a href="{{ tag.url }}">{{ tag.name }}</a></li>{% endfor %}</ul></dd></div>{% endif %}
+    </dl>
+    {% block above_title %}{% endblock %}
+    <h1><span class="md-mark" aria-hidden="true">#</span>{{ page.title }}</h1>
+    {% if page.summary %}<p class="summary">{{ page.summary }}</p>{% endif %}
+  </header>
+  {% block before_content %}{% endblock %}
+  <div class="prose">{{ content | safe }}</div>
+</article>
+{% if backlinks or outgoing %}
+<aside class="connections" aria-label="Connections">
+  {# Loci relations hidden until there's more content. To show again, add `or relations`
+     to the `if` above and remove this comment wrapper.
+  {% if relations %}
+  <section>
+    <h2 class="label"><span aria-hidden="true">◇</span> relations</h2>
+    {% include "_relations.html" %}
+  </section>
+  {% endif %}
+  #}
+  {% if backlinks %}
+  <section>
+    <h2 class="label"><span aria-hidden="true">←</span> linked from <span class="count">({{ backlinks | length }})</span></h2>
+    <ul class="backlinks" role="list">
+      {% for link in backlinks %}
+      <li>
+        <a href="{{ link.url }}">{{ link.title }}</a>
+        <p>{{ link.snippet }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+  {% if outgoing %}
+  <section>
+    <h2 class="label"><span aria-hidden="true">→</span> links to</h2>
+    <ul class="outgoing" role="list">
+      {% for link in outgoing %}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</aside>
+{% endif %}
+{% endblock %}

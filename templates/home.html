@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}{% if page %}{{ page.title }}{% else %}nickng.xyz{% endif %}{% endblock %}
+{% block meta %}{% if page and page.summary %}<meta name="description" content="{{ page.summary }}">{% endif %}{% endblock %}
+{% block body_class %}wide{% endblock %}
+{% block crumb %}<span aria-current="page">home</span>{% endblock %}
+{% block main %}
+<div class="home">
+  <header class="home-intro">
+    <h1 class="statement">{% if page and page.summary %}{{ page.summary }}{% else %}Commonplace{% endif %}</h1>
+    {% if intro | trim %}<div class="prose">{{ intro | safe }}</div>{% endif %}
+  </header>
+
+  {% for section in sections %}
+  <section class="home-section">
+    <h2><span class="md-mark" aria-hidden="true">##</span>{{ section.heading }}</h2>
+    <div class="prose">{{ section.html | safe }}</div>
+  </section>
+  {% endfor %}
+
+  <section class="home-garden" aria-labelledby="commonplace-heading">
+    <h2 id="commonplace-heading"><span class="md-mark" aria-hidden="true">##</span>Commonplace</h2>
+    {% if pinned %}
+    <div class="home-pinned">
+      <ul role="list">
+        {% for p in pinned %}
+        <li>
+          <a href="{{ p.url }}">{{ p.title }}</a>
+          {% if p.summary %}<p>{{ p.summary }}</p>{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    <h3 class="label">recent notes</h3>
+    <ol class="index" role="list">
+      {% for p in pages %}
+      <li>
+        <a href="{{ p.url }}">{{ p.title }}</a>
+        {% if p.stage %}<span class="stage" data-stage="{{ p.stage }}" title="{{ p.stage }}"><span class="visually-hidden">{{ p.stage }}</span></span>{% else %}<span></span>{% endif %}
+        {% if p.tended %}<time datetime="{{ p.tended }}">{{ p.tended }}</time>{% else %}<span></span>{% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+</div>
+{% endblock %}

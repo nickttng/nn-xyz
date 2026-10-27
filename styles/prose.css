@@ -1,0 +1,76 @@
+/* Long-form reading. Everything here comes from Markdown, so it styles elements, not classes. */
+.prose { max-inline-size: var(--measure); }
+.prose > * + * { margin-block-start: 1em; }
+
+.prose :is(h2, h3, h4) { position: relative; margin-block-start: 2.2em; }
+.prose :is(h2, h3, h4) + * { margin-block-start: 0.6em; }
+.prose h2 { font-size: var(--step-2); }
+.prose h3 { font-size: var(--step-1); }
+.prose h4 { font-size: var(--step-0); }
+
+.prose :is(ul, ol) { padding-inline-start: 1.25em; }
+.prose li + li { margin-block-start: 0.35em; }
+.prose li::marker { color: var(--ink-muted); font-family: var(--font-mono); font-size: 0.9em; }
+.prose li:has(> input[type="checkbox"]) { list-style: none; margin-inline-start: -1.25em; }
+
+.prose blockquote {
+  border-inline-start: 2px solid var(--accent);
+  padding-inline-start: var(--space-s);
+  color: var(--ink-muted);
+}
+
+.table-scroll { overflow-x: auto; }
+.table-scroll:focus-visible { outline-offset: 0; }
+.prose table { inline-size: 100%; border-collapse: collapse; font-size: var(--step--1); }
+.prose :is(th, td) { text-align: start; padding: var(--space-2xs) var(--space-xs); border-block-end: 1px solid var(--rule); }
+.prose th { font-family: var(--font-mono); font-weight: 500; }
+
+.prose em { font-style: italic; }
+.prose > p:first-child > em:only-child { color: var(--ink-muted); }
+
+/* Borrowed from nickng.xyz */
+.prose figcaption { font-style: oblique; font-size: 0.75em; line-height: 1.5; padding-block: 0.5em; color: var(--ink-muted); }
+
+/* Images, figures, and photo galleries (a paragraph of only images) */
+.prose img { border-radius: var(--radius); background: var(--surface); }
+.prose figure { margin-block: var(--space-l); }
+.prose figure img { inline-size: 100%; }
+.prose figcaption { margin-block-start: var(--space-2xs); }
+
+.prose .gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-s);
+  margin-block: var(--space-m);
+}
+/* One photo per row at its own proportions: no cropping. */
+.prose .gallery img { inline-size: 100%; block-size: auto; }
+
+.image-missing {
+  display: grid;
+  place-items: center;
+  min-block-size: 6rem;
+  aspect-ratio: 4 / 3;
+  padding: var(--space-xs);
+  background: var(--surface);
+  border: 1px dashed var(--rule);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  color: var(--ink-muted);
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+/* Footnotes */
+.prose .footnote-ref a,
+.prose sup a { font-family: var(--font-mono); font-size: 0.8em; text-decoration: none; padding-inline: 0.15em; }
+.prose .footnotes {
+  margin-block-start: var(--space-xl);
+  padding-block-start: var(--space-m);
+  border-block-start: 1px solid var(--rule);
+  font-size: var(--step--1);
+  color: var(--ink-muted);
+}
+.prose .footnotes ol { padding-inline-start: 1.5em; }
+.prose .footnote-backref { text-decoration: none; font-family: var(--font-mono); }
