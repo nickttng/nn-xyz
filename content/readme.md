@@ -7,7 +7,7 @@ stage: evergreen
 tags:
   - meta
 planted: 2026-10-25
-tended: 2026-10-26
+tended: 2026-10-29
 summary: A map of the garden — what the growth stages mean, books read slowly, and field notes from travel.
 ---
 This is a garden, not a blog. Notes are planted early and tended over time, so some are rough. Each one is marked as a seedling, budding, or evergreen so you know what you're reading.
@@ -20,6 +20,7 @@ This is a garden, not a blog. Notes are planted early and tended over time, so s
 Books, and the worlds they build.
 
 - [[Wessex as a World]]
+- [[The Trumpet-Major]]
 - [[Under the Greenwood Tree]]
 - [[The Iliad]]
 
