@@ -7,7 +7,7 @@ tags:
   - thomas-hardy
   - worldbuilding
 planted: 2026-01-17
-tended: 2026-10-26
+tended: 2026-10-29
 summary: A reading plan through Thomas Hardy's Wessex novels in story order, watching a world yield to modernity.
 locus: work
 ---
@@ -23,7 +23,7 @@ Hardy never gave an official chronology, so this order follows the internal time
 
 | # | Novel | Era | Atomsphere | Status |
 |---|-------|-----|-----------------|--------|
-| 1 | *The Trumpet-Major* | c. 1800–1805 | Stressing over everyday courtship while Napoleon prepares to invade | Done |
+| 1 | *The Trumpet-Major* | c. 1800–1805 | Stressing over everyday courtship while Napoleon prepares to invade | [[The Trumpet-Major]] |
 | 2 | *Desperate Remedies* | c. 1815–1825 | TBD | Reading|
 | 3 | *Under the Greenwood Tree* | c. 1820s–1830s | A pastoral comedy-romance about a village choir losing to a church organ | [[Under the Greenwood Tree]] |
 | 4 | *Far from the Madding Crowd* | c. 1830s–1840s | TBD | 🔲 Not yet started |
