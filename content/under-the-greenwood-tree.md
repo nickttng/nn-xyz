@@ -47,7 +47,8 @@ In the book, the Mellstock choir (and their instruments) is displaced by Fancy a
 
 Hardy reads lives through their particulars. There is no imposition of meaning; rather, we wait the objects to tell. I didn’t go looking for what the stain signifies. I read the stain, stayed with it, and eventually it tells me what it knows.
 
-![A small silver lustre bowl on a pale cloth against a near-black ground, a heap of pea pods beside it, one split open.](images/swn-lustre-bowl.webp)
-*Sir William Nicholson, The Lustre Bowl with Green Peas*
+![A village church gallery crowded with singers and players: a man in black conducts with a raised hand, a clarinettist and a cellist play, girls in bonnets read from hymn books, and two hats hang on pegs on the wall behind them.](images/tw-village-choir.webp)
+*Thomas Webster, A Village Choir, 1847. © Victoria and Albert Museum, London*
+
 
 [^1]: I read _Under the Greenwood Tree_ as part of the [[Wessex as a World]] reading plan.
