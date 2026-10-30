@@ -19,7 +19,7 @@ displaces:
   - The sailor > The soldier
 ---
 
-_This note discusses how the book ends._
+_This note gives away how the book ends._
 
 _The Trumpet-Major_ comes first in my [[Wessex as a World]] reading plan, which follows the novels in story order. It is a courtship comedy, set in 1804–1805. Anne Garland, a widow’s daughter living at Overcombe Mill, is courted by three men while the camps on the down wait for Napoleon: John Loveday, the miller’s son and a trumpet-major in the dragoons; his younger brother Robert, called Bob, a sailor; and Festus Derriman, a blustering yeoman. It is a gentle book, yet Hardy hides the ending in the second chapter, on top of a pole in the miller’s garden. I almost missed it:
 
