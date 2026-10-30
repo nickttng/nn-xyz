@@ -55,11 +55,11 @@ Anne doesn’t choose John. Hardy names how hard it is:
 
 Near the end she tells him, “Gratitude is not love, though I wanted to make it so for the time.” John, for his part, spends the back half of the book stepping aside. He pretends to love an actress so his brother won’t feel guilty, and when Bob is slow to come back, he writes to call him home.
 
-Hardy doesn’t make Bob the villain, though I muttered “what an exasperating cad” more than once. Bob forgets Anne for a woman he has known a fortnight, and later for a baker’s daughter in Portsmouth. He is also the boy who once ran into a burning cottage for a baby, the man who walks to Captain Hardy’s door to ask for the _Victory_, and the one who saws through the wall between his room and Anne’s because they are “now one family.” John’s love is held back. Bob’s is present, careless and warm, and it is the one she answers. Festus, the third suitor, has money and little else, and Hardy makes him comic because he thinks money should be enough.
+Hardy doesn’t make Bob the villain, though I muttered “what an exasperating cad” more than once. Bob forgets Anne for a woman he has known a fortnight, and later for a baker’s daughter in Portsmouth. He is also the boy who once ran into a burning cottage for a baby, the man who walks to a Captain's door to ask for the _Victory_, and the one who saws through the wall between his room and Anne’s because they are “now one family.” John’s love is held back. Bob’s is present, careless and warm, and it is the one she answers. Festus, the third suitor, has money and little else, and Hardy makes him comic because he thinks money should be enough.
 
 I keep wanting to call John the right choice. But that is my measure, not Anne's: perhaps a reader's wish to see goodness rewarded.
 
-## A comedy that knows the casualty list
+## A comedy knowing the casualty list
 
 The courtship is light, but Hardy wrote the book in 1879, some seventy-five years after the summer it describes. The narration keeps stepping out of the scene to tell us who will die. At the mill-pond, the miller hands cherries over the hedge to dragoons on horseback, who catch them in their forage-caps:
 
@@ -67,7 +67,7 @@ The courtship is light, but Hardy wrote the book in 1879, some seventy-five year
 
 The dragoons don’t know. They are catching cherries in their caps. We as readers can’t share their innocence, because Hardy tells us, in the same sentence, where the memory will find them. It repeats — Sergeant Stanner sings a comic song about Boney at the miller’s party, and in the next paragraph he is trampled at Albuera. At the farewell, seven soldiers wish Anne well, and “five, including the trumpet-major, were dead men within the few following years.”
 
-So in the end John isn’t only displaced by his brother. He is carried off by history:
+So in the end John isn’t only displaced by his brother. History carried him off:
 
 > … in another moment he had plunged into the darkness, the ring of his smart step dying away upon the bridge as he joined his companions-in-arms, and went off to blow his trumpet till silenced for ever upon one of the bloody battle-fields of Spain.
 
