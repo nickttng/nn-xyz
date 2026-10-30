@@ -5,9 +5,9 @@ The source for [nickng.xyz](https://nickng.xyz/), my digital garden. It holds re
 ## How it's built
 
 - **Writing:** Markdown files in `content/`, with front matter and `[[wikilinks]]` between notes.
-- **Engine:** a small Rust program in `src/` that turns the notes into plain HTML. It uses [comrak](https://github.com/kivikakk/comrak) for Markdown, [MiniJinja](https://github.com/mitsuhiko/minijinja) for templates, and [Lightning CSS](https://lightningcss.dev/) for styles.
+- **Tooling:** a small Rust program in `src/` that turns the notes into plain HTML. It uses [comrak](https://github.com/kivikakk/comrak) for Markdown, [MiniJinja](https://github.com/mitsuhiko/minijinja) for templates, and [Lightning CSS](https://lightningcss.dev/) for styles.
 - **Type:** IBM Plex Mono and Inter, both open source and served from the site itself.
-- **Hosting:** GitHub Pages. Merging to `main` deploys the site.
+- **Hosting:** GitHub Pages.
 
 To run it locally:
 
