@@ -21,7 +21,9 @@ displaces:
 
 _This note gives away how the book ends._
 
-_The Trumpet-Major_ comes first in my [[Wessex as a World]] reading plan, which follows the novels in story order. It is a courtship comedy, set in 1804–1805; still in a pastoral world. Anne Garland, a widow’s daughter living at Overcombe Mill, is courted by three men while the camps on the down wait for Napoleon: John Loveday, the miller’s son and a trumpet-major in the dragoons; his younger brother Robert, called Bob, a sailor; and Festus Derriman, a blustering yeoman. It is a gentle book, yet Hardy hides the ending in the second chapter, on top of a pole in the miller’s garden. I almost missed it:
+_The Trumpet-Major_ comes first in my [[Wessex as a World]] reading plan, which follows the novels in story order. It is a courtship comedy, set in 1804–1805; still in a pastoral world. 
+
+Anne Garland, a widow’s daughter living at Overcombe Mill, is courted by three men while the camps on the down wait for Napoleon: John Loveday, the miller’s son and a trumpet-major in the dragoons; his younger brother Robert, called Bob, a sailor; and Festus Derriman, a blustering yeoman. It is a gentle book, yet Hardy hides the ending in the second chapter, on top of a pole in the miller’s garden. I almost missed it:
 
 > When the sun shone upon this figure it could be seen that the greater part of his countenance was gone, and the paint washed from his body so far as to reveal that he had been a soldier in red before he became a sailor in blue. The image had, in fact, been John, one of our coming characters, and was then turned into Robert, another of them.
 
@@ -53,7 +55,7 @@ Anne doesn’t choose John. Hardy names how hard it is:
 
 Near the end she tells him, “Gratitude is not love, though I wanted to make it so for the time.” John, for his part, spends the back half of the book stepping aside. He pretends to love an actress so his brother won’t feel guilty, and when Bob is slow to come back, he writes to call him home.
 
-It would be easy to make Bob the villain (Hardy doesn’t). Bob forgets Anne for a woman he has known a fortnight, and later for a baker’s daughter in Portsmouth. He is also the boy who once ran into a burning cottage for a baby, the man who walks to Captain Hardy’s door to ask for the _Victory_, and the one who saws through the wall between his room and Anne’s because they are “now one family.” John’s love is held back. Bob’s is present, careless and warm, and it is the one she answers. Festus, the third suitor, has money and little else, and Hardy makes him comic because he thinks money should be enough.
+Hardy doesn’t make Bob the villain, though I muttered “what an exasperating cad” more than once. Bob forgets Anne for a woman he has known a fortnight, and later for a baker’s daughter in Portsmouth. He is also the boy who once ran into a burning cottage for a baby, the man who walks to Captain Hardy’s door to ask for the _Victory_, and the one who saws through the wall between his room and Anne’s because they are “now one family.” John’s love is held back. Bob’s is present, careless and warm, and it is the one she answers. Festus, the third suitor, has money and little else, and Hardy makes him comic because he thinks money should be enough.
 
 I keep wanting to call John the right choice. But that is my measure, not Anne's: perhaps a reader's wish to see goodness rewarded.
 
