@@ -29,6 +29,7 @@ scripts/setup.sh                        # turns on .githooks/ (works with GitHub
 - `KWAJ_CONTENT_DIR=~/path/to/vault cargo run -- build` — build from a private vault locally
 - `scripts/guard.sh --all` — the privacy guard CI runs (only covers tracked files; new files are checked at commit by the hook)
 - `scripts/images.sh` — audit images for size, format, colour profile, and metadata (`optimize FILE…` to fix)
+- `python3 .agents/skills/hardy-verification/check_quotes.py content/NOTE.md` — check a note's quotations against the full text of Hardy's novels
 
 ## Publishing
 - Merging to `main` deploys via `.github/workflows/deploy.yml` (Pages source: GitHub Actions). Other branches and PRs run the same checks but don't deploy.
@@ -61,6 +62,7 @@ scripts/setup.sh                        # turns on .githooks/ (works with GitHub
 - `garden-links` — wikilinks, backlinks, slugs, the link graph.
 - `css-system` — tokens, typography, and the no-framework CSS approach.
 - `web-images` — image budgets, compression, and keeping pages with photos fast.
+- `hardy-verification` — verifying quotations, plot, dates, places, editions, and citations when writing about Thomas Hardy.
 
 ## Roles (`.agents/roles/`)
 | Role | Reviews | Can block? |
@@ -69,5 +71,6 @@ scripts/setup.sh                        # turns on .githooks/ (works with GitHub
 | `accessibility-architect` | WCAG 2.2 AA in light and dark mode; tracks the WCAG 3 draft | Yes |
 | `editor` | Voice, typos, clarity, and alt text in the owner's writing. Suggests; never edits prose without a yes | No |
 | `cataloguer` | The loci vocabulary: names, relations, guardrails, consistency across notes | No |
+| `hardy-scholar` | Facts and readings in notes about Thomas Hardy: quotations, plot, dates, places, editions, citations. Suggests; never edits prose without a yes | No |
 
 Only the two blocking roles can stop a change. Advisory roles propose; the owner decides.
