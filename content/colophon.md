@@ -4,11 +4,11 @@ publish: true
 unlisted: true
 stage: evergreen
 planted: 2026-10-25
-tended: 2026-10-26
+tended: 2026-10-31
 summary: How this site is made, and a few notes on reading it.
 ---
 
-This site is a garden, not a feed. Notes are planted while they're still rough and tended over time. Some will change. A few will stay as they are. Where a note shows a stage, it tells you how far along it is: seedling, budding, or evergreen.
+A garden in how it grows, an observatory in how I use it. Notes are planted while they're still rough and tended over time. Some will change. A few will stay as they are. Where a note shows a stage, it tells you how far along it is: seedling, budding, or evergreen.
 
 ## Writing
 

@@ -7,10 +7,12 @@ stage: evergreen
 tags:
   - meta
 planted: 2026-10-25
-tended: 2026-10-29
-summary: A map of the garden — what the growth stages mean, books read slowly, and field notes from travel.
+tended: 2026-10-31
+summary: A place to collect observations, shift perspective, and look outward through reading notes, field notes from travel, and other writing.
 ---
-This is a garden, not a blog. Notes are planted early and tended over time, so some are rough. Each one is marked as a seedling, budding, or evergreen so you know what you're reading.
+This is my digital garden, though I aspire to make it more of an observatory. I use observatory as a metaphor: a place to collect observations, shift perspective, and look outward through reading notes, field notes from travel, and other writing.
+
+Notes are planted early and tended over time, so some are rough. Each one is marked as a seedling, budding, or evergreen so you know what you're reading.
 
 - **Seedling:** a rough first thought, recently planted. Expect gaps.
 - **Budding:** taking shape, revised a few times, and still growing.
