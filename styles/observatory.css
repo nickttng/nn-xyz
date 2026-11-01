@@ -51,26 +51,10 @@
 .train-roof { fill: none; stroke: var(--print-sunset); stroke-width: 1; }
 .train-windows { fill: var(--print-ink); }
 .train-line { fill: none; stroke: var(--print-ink); stroke-width: 1.3; }
-.observatory-pause {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2xs);
-  inline-size: fit-content;
-  min-block-size: 2.75rem;
-  margin-inline: auto 0;
-  padding-block: var(--space-2xs);
-  font: var(--step--2) var(--font-mono);
-  color: var(--ink-muted);
-  cursor: pointer;
-}
-.observatory-pause input { accent-color: var(--accent); }
-.observatory:has(.observatory-pause input:checked) :is(.observatory-train, .observatory-layer) {
-  animation-play-state: paused;
-}
 @keyframes observatory-train {
   from { transform: translateX(-105%); }
   to { transform: translateX(315%); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .observatory-pause, .observatory-atmosphere { display: none; }
+  .observatory-atmosphere { display: none; }
 }
