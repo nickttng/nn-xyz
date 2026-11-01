@@ -1,0 +1,27 @@
+{# Keep the print's original ink and paper tones; the train is a separate layer. #}
+<figure class="observatory">
+  <div class="observatory-scene">
+    <img class="observatory-print" src="/images/observatory-print.webp" width="1440" height="720" alt="An engraved, dithered sunset view of a city: an observatory and prairie flowers beside a lagoon, Art Deco towers linked by skybridges, and a railway disappearing into trees. Pale apricot link warms the sky and reflections." loading="lazy" decoding="async">
+    <span class="observatory-atmosphere" aria-hidden="true">
+      <span class="observatory-layer observatory-clouds"></span>
+    </span>
+    <span class="observatory-track" aria-hidden="true">
+      <svg class="observatory-train" viewBox="0 0 300 22" width="300" height="22" focusable="false">
+        <defs>
+          <pattern id="train-engraving" width="4" height="4" patternUnits="userSpaceOnUse">
+            <path class="train-hatch" d="M-1 1l2-2M0 4l4-4M3 5l2-2"/>
+          </pattern>
+        </defs>
+        <path class="train-body" d="M2 18V8Q2 3 9 3h54q5 0 5 5v10zM72 18V5h65v13zM141 18V5h65v13zM210 18V5h65q13 1 23 13z"/>
+        <path fill="url(#train-engraving)" d="M2 18V8Q2 3 9 3h54q5 0 5 5v10zM72 18V5h65v13zM141 18V5h65v13zM210 18V5h65q13 1 23 13z"/>
+        <path class="train-windows" d="M8 7h7v6H8zM19 7h7v6h-7zM30 7h7v6h-7zM41 7h7v6h-7zM52 7h7v6h-7zM78 7h7v6h-7zM89 7h7v6h-7zM100 7h7v6h-7zM111 7h7v6h-7zM122 7h7v6h-7zM147 7h7v6h-7zM158 7h7v6h-7zM169 7h7v6h-7zM180 7h7v6h-7zM191 7h7v6h-7zM216 7h7v6h-7zM227 7h7v6h-7zM238 7h7v6h-7zM249 7h7v6h-7zM260 7h7v6h-7zM278 7l10 7h-10z"/>
+        <path class="train-shadow" d="M3 15h64v3H3zM73 15h63v3H73zM142 15h63v3h-63zM211 15h79l6 3h-85z"/>
+        <path class="train-roof" d="M9 4h50M76 5h56M145 5h56M214 5h57"/>
+        <path class="train-line" d="M2 19h296M68 13h4m65 0h4m65 0h4"/>
+        <path class="train-windows" d="M12 19h10v2H12zM47 19h10v2H47zM82 19h10v2H82zM117 19h10v2h-10zM151 19h10v2h-10zM186 19h10v2h-10zM220 19h10v2h-10zM265 19h10v2h-10z"/>
+      </svg>
+    </span>
+  </div>
+  <label class="observatory-pause"><input type="checkbox"> Pause animation</label>
+  <figcaption>Generated via Codex GPT-6.1 Sol.</figcaption>
+</figure>

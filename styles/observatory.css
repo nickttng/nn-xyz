@@ -1,0 +1,76 @@
+/* Match the train to the print's ink and paper in either page theme. */
+.observatory { --print-ink: #2f4435; --print-train: #b8baa3; --print-sunset: #cfad89; }
+.prose .observatory { margin-block: var(--space-l); }
+.observatory-scene { position: relative; isolation: isolate; overflow: hidden; border-radius: var(--radius); }
+.observatory-print { inline-size: 100%; block-size: auto; }
+
+/* A feathered copy of the print drifts the clouds. Keep its source in sync
+   with _observatory.html. Alternating curves reverse without a jump. */
+.observatory-atmosphere,
+.observatory-layer { position: absolute; inset: 0; pointer-events: none; }
+.observatory-layer {
+  background: url("/images/observatory-print.webp") center / 100% 100% no-repeat;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+.observatory-clouds {
+  mask-image: radial-gradient(ellipse 20% 18% at 39% 23%, #000 25%, transparent 100%);
+  animation-name: observatory-clouds;
+  animation-duration: 24s;
+  animation-delay: -12s;
+}
+@keyframes observatory-clouds {
+  from { transform: translate(-0.16%, -0.05%) scaleX(0.999); }
+  to { transform: translate(0.16%, 0.05%) scaleX(1.001); }
+}
+
+/* The track ends inside the native tree screen at the right of the print. */
+.observatory-track {
+  position: absolute;
+  inset-inline-start: 40.5%;
+  inset-block-start: 65.1%;
+  inline-size: 40%;
+  block-size: 2.5%;
+  overflow: hidden;
+  pointer-events: none;
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 98%, transparent);
+}
+.observatory-train {
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-end: 0;
+  inline-size: 32%;
+  block-size: auto;
+  transform: translateX(65%);
+  animation: observatory-train 20s linear infinite;
+}
+.train-body { fill: var(--print-train); stroke: var(--print-ink); stroke-width: 1.3; }
+.train-hatch { fill: none; stroke: var(--print-ink); stroke-width: 0.6; opacity: 0.55; }
+.train-shadow { fill: var(--print-ink); opacity: 0.55; }
+.train-roof { fill: none; stroke: var(--print-sunset); stroke-width: 1; }
+.train-windows { fill: var(--print-ink); }
+.train-line { fill: none; stroke: var(--print-ink); stroke-width: 1.3; }
+.observatory-pause {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  inline-size: fit-content;
+  min-block-size: 2.75rem;
+  margin-inline: auto 0;
+  padding-block: var(--space-2xs);
+  font: var(--step--2) var(--font-mono);
+  color: var(--ink-muted);
+  cursor: pointer;
+}
+.observatory-pause input { accent-color: var(--accent); }
+.observatory:has(.observatory-pause input:checked) :is(.observatory-train, .observatory-layer) {
+  animation-play-state: paused;
+}
+@keyframes observatory-train {
+  from { transform: translateX(-105%); }
+  to { transform: translateX(315%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .observatory-pause, .observatory-atmosphere { display: none; }
+}

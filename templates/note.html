@@ -23,7 +23,16 @@
     {% if page.summary %}<p class="summary">{{ page.summary }}</p>{% endif %}
   </header>
   {% block before_content %}{% endblock %}
-  <div class="prose">{{ content | safe }}</div>
+  <div class="prose">
+    {% if page.slug == "readme" %}
+      {% set paragraphs = content | split("</p>", 1) %}
+      {{ paragraphs[0] | safe }}{% if paragraphs | length > 1 %}</p>{% endif %}
+      {% include "_observatory.html" %}
+      {% if paragraphs | length > 1 %}{{ paragraphs[1] | safe }}{% endif %}
+    {% else %}
+      {{ content | safe }}
+    {% endif %}
+  </div>
 </article>
 {% if backlinks or outgoing %}
 <aside class="connections" aria-label="Connections">

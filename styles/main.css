@@ -8,4 +8,5 @@
 @import "layout.css" layer(layout);
 @import "prose.css" layer(prose);
 @import "components.css" layer(components);
+@import "observatory.css" layer(components);
 @import "utilities.css" layer(utilities);
