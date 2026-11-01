@@ -1,6 +1,6 @@
 # nickng.xyz
 
-The source for [nickng.xyz](https://nickng.xyz/), my digital garden. It holds reading notes, field notes from travel, and other writing tbd.
+The source for [nickng.xyz](https://nickng.xyz/), my digital garden, though I aspire to make it more of an observatory. I use observatory as a metaphor: a place to collect observations, shift perspective, and look outward through reading notes, field notes from travel, and other writing TBD.
 
 ## How it's built
 

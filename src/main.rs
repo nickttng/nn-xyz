@@ -1,4 +1,4 @@
-//! kwaj: builds a digital garden from Markdown notes.
+//! kwaj: builds a digital observatory from Markdown notes.
 
 mod assets;
 mod content;
@@ -14,7 +14,7 @@ use std::process::ExitCode;
 use clap::{Args, Parser, Subcommand};
 
 #[derive(Parser)]
-#[command(version, about = "Build the kwaj digital garden")]
+#[command(version, about = "Build the kwaj digital observatory")]
 struct Cli {
     /// Folder of Markdown notes. Can point at an Obsidian vault.
     #[arg(

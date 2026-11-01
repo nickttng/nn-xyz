@@ -1,6 +1,6 @@
 # nickng.xyz
 
-A personal digital garden: professional + personal writing, authored as Markdown with YAML front matter, compiled to a static site by a small custom Rust binary, and hosted on GitHub Pages from a **public** repo.
+A personal digital observatory: professional + personal writing, authored as Markdown with YAML front matter, compiled to a static site by a small custom Rust binary, and hosted on GitHub Pages from a **public** repo.
 
 ## Who you're working with
 The owner is a designer and lightweight developer. Explain Rust decisions in plain terms, prefer readable code over clever code, and keep templates and CSS editable without touching Rust.
